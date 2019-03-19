@@ -1,5 +1,5 @@
 module.exports = {
-    greet: function(name) {
+    greet:function(name) {
         return `Greetings ${name}!`;
     }
 }
