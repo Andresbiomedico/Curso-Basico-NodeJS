@@ -6,9 +6,11 @@ const ops=require("./src/fileops");
     const lecture= new Promise((resolve,reject)=>{
         console.log("entre a la promesa ")
             fs.readFile("./resources/number.txt","utf8",async function (error,texto){
-                if (error) reject(error)
-                text= await texto
-                const numbers=text.split("\n")
+                if (error){
+                    reject(error)
+                     return;
+                } 
+                const numbers=texto.split("\n")
                 console.log("metodo read"+numbers)
                 resolve(ops.incrementValues(numbers))
             })  
@@ -20,7 +22,9 @@ function write(x){
     console.log(x)
     fs.writeFile("./resources/numbernew.txt",x.join("\n"),
     (error,result)=>{
-        if(error) throw  error
+        if(error) 
+        console.log(error)
+        return
     })
 }
 
