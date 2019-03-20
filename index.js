@@ -5,3 +5,4 @@ async function callwithpromise(){
      console.log(fullname);
 }
 callwithpromise()
+
